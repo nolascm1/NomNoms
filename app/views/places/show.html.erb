@@ -3,11 +3,15 @@
 <i><%= @place.address %></i>
 <br/><br/>
 <p><%= @place.description %></p>
+<br/><br/>
 <div class="float-right">
+    <% if current_user && current_user == @place.user %>
     <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-    <% link_to 'Destroy' place_path(@place), method: :delete, data: {confirm: 'Trash this NomNoms?'},class: 'btn btn-danger' %>
+    <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Trash this NomNoms?'},class: 'btn btn-danger' %>
+    <% end %>
 </div>
 </div>
+
 
 
 
