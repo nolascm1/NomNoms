@@ -4,6 +4,12 @@
     <br/><br/>
     <p><%= @place.description %></p>
 
+    <%= @place.photos.each do |photo| %>
+    <%= f.input :picure %>
+    <%= image_tag photo.picture.url %>
+    <%= photo.caption %>
+    <% end %>
+
     <% if @place.latitude.present? && @place.longitude.present? %>
 
     
@@ -41,10 +47,7 @@
     </div>
     </div>
 
-    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-    <%= f.input :photo %>
-    <%= f.input :caption %>
-    <% end %>
+   
 
 
    

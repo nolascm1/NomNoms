@@ -71,6 +71,7 @@ gem 'devise'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem "geocoder"
 gem "figaro"
+gem 'carrierwave', '~> 1.0'
 
 
 
